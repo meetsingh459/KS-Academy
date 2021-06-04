@@ -1,0 +1,52 @@
+*{
+	margin: 0;
+	padding: 0;
+}
+
+.file_upload-block{
+	background-size: cover;
+	background-position: center;
+	display: flex;
+	top: 0;
+	width: 100%;
+	height: 100vh;
+	background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url("../images/upload.jpg");
+	justify-content: center;
+	align-items: center;	
+}
+
+.upload_form{
+	background-color: rgba(0,0,0,0.5);
+	padding: 50px 70px;
+
+}
+
+.upload_form p{
+	color: white;
+	font-size: 25px;
+	margin-bottom: 15px;
+	font-family: sans-serif;
+}
+
+.upload_form input{
+	width: 450px;
+	background-color: transparent;
+	height: 35px;
+	color: white;
+	margin-bottom:  25px;
+	font-size: 20px;
+}
+
+
+.upload_form select{
+	margin-bottom: 25px;
+	width: 450px;
+	height:35px;
+	font-size: 20px;
+}
+
+.upload_form input[type=submit]{
+	background-color: #D7DBDD;
+	color: black;
+}
+

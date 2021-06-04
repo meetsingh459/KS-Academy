@@ -1,0 +1,363 @@
+*{
+	margin: 0;
+	padding: 0;
+	font-color:white;
+}
+
+.header{
+	background-image:linear-gradient( rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url("../images/background.jpg");
+	height: 100vh;
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: cover;
+}
+
+nav{
+	background-color: black;
+	height: 120px;
+	width: 100%;
+}
+
+.logo{
+	height: 90%;
+	padding: 5px 100px;
+}
+
+nav ul{
+	z-index: 1;
+	float:right;
+	margin-right: 50px;
+}
+
+nav ul li{
+	display: inline-block;
+	line-height: 120px;
+	margin: 0px 5px;
+	z-index: 1;
+}
+
+nav ul li a{
+	color: white;
+	padding: 10px 30px;
+	font-size: 20px;
+	transition: 0.5s ease;
+	text-decoration: none;
+}
+
+nav ul li a:hover{
+	background-color: red;
+}
+
+.drop-cont{
+	position: absolute;
+	display: none;
+}
+
+.drop-cont li{
+	position: relative;
+	display:block;
+	margin-top: -5px;
+	background-color: black;
+	line-height: 50px;
+	transition: 0.5 ease;
+	z-index: 1;
+}
+
+.drop-cont li:hover{
+	background-color: red;
+}
+
+.drop-btn:hover .drop-cont{
+	display: block;
+}
+
+.checkbtn{
+	font-size: 30px;
+	color: white;
+	line-height: 120px;
+	float: right;
+	margin-right: 40px;
+	cursor: pointer;	
+	display: none;
+}
+
+#check{
+	display: none;
+}
+
+.title{
+	position: absolute;
+	top: 40%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
+
+.search{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	box-sizing: border-box;
+	margin-top: 340px;
+}
+
+.search form input{
+	width: 650px; 
+	height:43px; 
+	background-color: 
+	transparent;
+	border-radius: 15px 0 0 15px;
+	color:white; 
+	padding-left: 20px; 
+	font-size: 20px; 
+}
+
+.search form button{
+	width: 100px; 
+	height:43px; 
+	margin-left:-4px;  
+	border-radius: 0 15px 15px 0; 
+	box-sizing:content-box; 
+}
+
+.title h1{
+	z-index: 0;
+	font-size: 90px;
+	color: white;
+	font-family: times-new roman;
+}
+
+
+.tut{
+	position: absolute;
+	left: 50%;
+	top: 58%;
+	transform: translate(-50%, -50%);
+}
+
+.tut a{
+	text-decoration: none;
+	color: white;
+	background-color:red;
+	padding: 10px 25px;
+	font-size: 23px;
+	border-radius: 12px;
+	border:1px solid white;
+	transition: 1s;
+}
+
+.tut a:hover{
+	background-color: black;
+}
+
+.about{
+	position: absolute;
+	bottom: 25px;
+	right: 35px;
+}
+
+.about a{
+	color: white;
+	margin: 5px;
+}
+
+.about a:hover{
+	color: red;
+}
+
+
+@media (max-width: 1000px){
+
+	.checkbtn{
+		display: block; 
+	}
+
+	nav ul{
+		position: absolute;
+		margin-top: -4px;
+		width: 100%;
+		height: auto;
+		text-align:center;
+		background-color: black;
+		left: -100%;
+	}
+
+	#check:checked ~ ul{
+		left: 0;
+	}
+
+	.drop-cont{
+		left: 0;
+	}
+
+	nav ul li{
+		line-height: 50px;
+		display: block;
+	}
+
+	nav ul li:hover{
+		background-color: red;
+	}
+
+	nav ul li a{
+		color: 
+	}
+}
+
+@media (max-width: 1300px){
+
+	.search form input{
+		width: 500px; 
+		height:38px;  
+		font-size: 20px; 
+	}
+
+	.search form button{
+		width: 80px; 
+		height:38px; 
+	}
+
+	.title h1{
+		font-size: 70px;
+	}
+
+}
+
+@media (max-width: 1000px){
+
+	.search form input{
+		width: 450px; 
+		height:33px;  
+		font-size: 20px; 
+	}
+
+	.search form button{
+		width: 70px; 
+		height:33px; 
+	}
+
+	.title h1{
+		font-size: 60px;
+	}
+
+	.tut a{
+		padding: 10px 24px;
+		font-size: 23px;
+	}
+
+}
+
+@media (max-width: 700px){
+
+	.logo{
+		height: 70%;
+		padding: 15px 20px;
+	}
+
+
+	.search form input{
+		width: 350px; 
+		height:23px;  
+		font-size: 20px; 
+	}
+
+	.search form button{
+		width: 50px; 
+		height:23px; 
+	}
+
+	.title h1{
+		font-size: 50px;
+	}
+
+	.tut a{
+		padding: 8px 22px;
+		font-size: 20px;
+	}
+}
+
+@media (max-width: 580px){
+
+	.title h1{
+		font-size: 40px;
+	}
+
+	.tut a{
+		padding: 7px 20px;
+		font-size: 18px;
+	}
+}
+
+@media (max-width: 480px){
+
+	.search{
+		margin-top: 250px;
+	}
+
+	.search form input{
+		width: 250px; 
+		height:20px;  
+		font-size: 17px; 
+	}
+
+	.search form button{
+		width: 30px; 
+		height:17px; 
+	}
+
+	.title h1{
+		font-size: 25px;
+	}
+
+	.tut a{
+
+		padding: 7px 20px;
+		font-size: 10px;
+	}
+
+}
+
+@media (max-height: 900px){
+
+	.search{
+		margin-top: 300px;
+	}
+}
+
+@media (max-height: 830px){
+
+	.search{
+		margin-top: 250px;
+	}
+}
+
+@media (max-height: 780px){
+
+	.search{
+		margin-top: 240px;
+	}
+}
+
+@media (max-height: 740px){
+
+	.search{
+		margin-top: 200px;
+	}
+}
+
+@media (max-height: 700px){
+
+	.search{
+		margin-top: 190px;
+	}
+}
+
+@media (max-height: 600px){
+
+	.search{
+		margin-top: 140px;
+	}
+
+	.tut{
+		transform: translate(-50%, -10%);
+	}
+}
