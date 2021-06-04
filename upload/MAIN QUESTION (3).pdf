@@ -1,0 +1,165 @@
+	-------------------------:::::::::::::::::::::Add two numbers represented by linked lists::::::::::::::;:::-------------------------
+
+
+
+#include <bits/stdc++.h> 
+using namespace std; 
+
+class Node { 
+public: 
+	int Value; 
+	Node* next; 
+}; 
+
+Node* newNode(int Value) 
+{ 
+	Node* new_node = new Node(); 
+	new_node->Value= Value; 
+	new_node->next = NULL; 
+	return new_node; 
+} 
+
+void push(Node** head_ref, int new_Value) 
+{ 
+	
+	Node* new_node = newNode(new_Value); 
+	new_node->next = (*head_ref); 
+	(*head_ref) = new_node; 
+} 
+
+
+Node* add(Node* F, Node* S) 
+{ 
+	Node* res = NULL; 
+	Node *temp, *prev = NULL; 
+	int C = 0, SUM; 
+
+	while (F != NULL || S != NULL) { 
+
+		SUM = C + (F ? F->Value: 0) + (S ? S->Value: 0); 
+
+		
+		C = (SUM >= 10) ? 1 : 0; 
+		SUM = SUM % 10; 
+		temp = newNode(SUM); 
+		
+
+		if (res == NULL) 
+			res = temp; 
+
+		 
+		else
+			prev->next = temp; 
+
+		
+		prev = temp; 
+
+		if (F) 
+			F = F->next; 
+		if (S) 
+			S = S->next; 
+	} 
+
+	if (C > 0) 
+		temp->next = newNode(C); 
+
+	return res; 
+} 
+
+void Display(Node* node) 
+{ 
+	while (node != NULL) { 
+		cout << node->Value<< " "; 
+		node = node->next; 
+	} 
+	cout << endl; 
+} 
+
+int main(void) 
+{ 
+	Node* res = NULL; 
+	Node* F = NULL; 
+	Node* S = NULL; 
+
+	push(&F, 2); 
+	push(&F, 4); 
+	push(&F, 3); 
+
+	push(&S, 5); 
+	push(&S, 6);
+    	push(&S, 4);
+
+	res = add(F, S); 
+	Display(res); 
+
+	return 0; 
+} 
+
+-----------------------------------------:::::::::::::::::::ADD TO NUMBER WITH TARGET:::::::::::::::::::::::::::::--------------------------------------------
+
+
+#include <bits/stdc++.h>
+using namespace std;
+
+int main() {
+    int n;
+    cin >> n;
+    int arr[n];
+    int target;
+    cin >> target;
+
+
+    for (int k = 0; k < n; k++)
+        cin >> arr[k];
+
+    for (int i = 0; i < n; i++) {
+        for (int j = i + 1; j < n; j++) {
+            if (arr[i] + arr[j] == target)
+                cout << i << " " << j << endl;
+        }
+    }
+    return 0;
+}
+
+
+
+
+						OR
+
+
+#include <bits/stdc++.h>
+ 
+using namespace std;
+ 
+void add(int arr[], int arr_size, int sum)
+{
+    unordered_set<int> s;
+    for (int i = 0; i < arr_size; i++) 
+    {
+        int temp = sum - arr[i];
+ 
+        if (s.find(temp) != s.end())
+            cout << temp <<" "<< arr[i] <<endl;
+ 
+        s.insert(arr[i]);
+    }
+}
+ 
+
+int main()
+{
+    int n;
+    cin >> n;
+    int A[n];
+    int target;
+    cin >> target;
+
+
+    for (int k = 0; k < n; k++)
+        cin >> A[k];
+        
+        
+    add(A, n, target);
+ 
+    return 0;
+}
